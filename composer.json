@@ -1,6 +1,7 @@
 {
     "name": "guennichi/collection",
     "description": "A lightweight PHP >= 8.1 library to create immutable collections of objects",
+    "keywords": ["collection", "immutable", "readonly"],
     "license": "MIT",
     "type": "library",
     "authors": [
