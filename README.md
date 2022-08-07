@@ -11,15 +11,17 @@ composer require guennichi/collection
 ## Usage
 
 ```php
+use Guennichi\Collection\Collection;
+
 final class Person
 {
     public function __construct(public readonly string $name) {}
 }
 
 /**
- * @extends Guennichi\Collection\Collection<Person>
+ * @extends Collection<Person>
  */
-final class PersonCollection extends Guennichi\Collection\Collection
+final class PersonCollection extends Collection
 {
     public function __construct(Person ...$elements)
     {
@@ -47,9 +49,9 @@ final class Employee
 }
 
 /**
- * @extends Guennichi\Collection\Collection<Employee>
+ * @extends Collection<Employee>
  */
-final class EmployeeCollection extends Guennichi\Collection\Collection
+final class EmployeeCollection extends Collection
 {
     public function __construct(Employee ...$elements)
     {
