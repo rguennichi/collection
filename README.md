@@ -42,7 +42,7 @@ count($persons); // 3
 $persons->each(static function (Person $person, int $index) {
     // Do something
 });
-$persons->filter(static fn (Person $person) => $person->name === 'Person3');
+$persons->filter(static fn (Person $person) => $person->name === 'Person3'); // new PersonCollection instance with [Person('Person3')]
 
 final class Employee
 {
