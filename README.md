@@ -38,6 +38,7 @@ $persons = new PersonCollection(
 $persons->first()->name // Person1. Also supports autocomplete, thanks @template annotations.
 $persons->contains(new Person('Person1')); // false
 $persons->count(); // 3
+count($persons); // 3
 $persons->each(static function (Person $person, int $index) {
     // Do something
 });

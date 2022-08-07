@@ -257,4 +257,15 @@ class CollectionTest extends TestCase
 
         $this->assertSame('[{"property":"example1"},{"property":"example2"},{"property":"example3"}]', json_encode($collection));
     }
+
+    public function testCount(): void
+    {
+        $collection = new EntityCollection(
+            new Entity('example1'),
+            new Entity('example2'),
+            new Entity('example3'),
+        );
+
+        $this->assertEquals(3, \count($collection));
+    }
 }
