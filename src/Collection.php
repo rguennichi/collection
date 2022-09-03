@@ -62,7 +62,7 @@ class Collection implements CollectionInterface
     }
 
     /**
-     * @param Closure(TValue, int=): void $closure
+     * @param Closure(TValue, int): void $closure
      */
     public function each(Closure $closure): void
     {
@@ -72,7 +72,7 @@ class Collection implements CollectionInterface
     }
 
     /**
-     * @param Closure(TValue, int=): bool $predicate
+     * @param Closure(TValue, int): bool $predicate
      */
     public function forAll(Closure $predicate): bool
     {
@@ -154,7 +154,7 @@ class Collection implements CollectionInterface
     }
 
     /**
-     * @param Closure(TValue, int=): bool $closure
+     * @param Closure(TValue, int): bool $closure
      *
      * @return CollectionInterface<TValue>
      */

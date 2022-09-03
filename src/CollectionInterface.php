@@ -34,14 +34,14 @@ interface CollectionInterface extends IteratorAggregate, Countable, JsonSerializ
     public function last(): mixed;
 
     /**
-     * @param Closure(TValue, int=): void $closure
+     * @param Closure(TValue, int): void $closure
      */
     public function each(Closure $closure): void;
 
     /**
      * Check if all elements of the collection satisfy the given predicate.
      *
-     * @param Closure(TValue, int=): bool $predicate
+     * @param Closure(TValue, int): bool $predicate
      */
     public function forAll(Closure $predicate): bool;
 
@@ -89,7 +89,7 @@ interface CollectionInterface extends IteratorAggregate, Countable, JsonSerializ
     public function mapTo(string $collectionClassname, Closure $closure): self;
 
     /**
-     * @param Closure(TValue, int=): bool $closure
+     * @param Closure(TValue, int): bool $closure
      *
      * @return CollectionInterface<TValue>
      */
