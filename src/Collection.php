@@ -74,7 +74,7 @@ class Collection implements CollectionInterface
     /**
      * @param Closure(TValue, int): bool $predicate
      */
-    public function forAll(Closure $predicate): bool
+    public function every(Closure $predicate): bool
     {
         foreach ($this as $key => $element) {
             if (true !== $predicate($element, $key)) {

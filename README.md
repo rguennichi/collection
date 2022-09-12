@@ -68,7 +68,7 @@ foreach ($employees as $employee) {
 }
 
 $employees->first(); // Employee('Person1'): instance of Employee class
-$employees->forAll(static fn (Employee $employee) => !empty($employee->name)); // True
+$employees->every(static fn (Employee $employee) => !empty($employee->name); // True
 $employees->sortAscBy(static fn (Employee $employee) => $employee->name); // new collection instance with [Employee('Person1'), Employee('Person3')]
 $employees->sortDescBy(static fn (Employee $employee) => $employee->name); // new collection instance with [Employee('Person3'), Employee('Person1')]
 

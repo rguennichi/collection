@@ -43,7 +43,7 @@ interface CollectionInterface extends IteratorAggregate, Countable, JsonSerializ
      *
      * @param Closure(TValue, int): bool $predicate
      */
-    public function forAll(Closure $predicate): bool;
+    public function every(Closure $predicate): bool;
 
     /**
      * @return CollectionInterface<TValue>

@@ -81,7 +81,7 @@ class CollectionTest extends TestCase
             new Entity('example3'),
         );
 
-        $this->assertFalse($collection->forAll(fn (Entity $entity) => 'example' === $entity->property));
+        $this->assertFalse($collection->every(fn (Entity $entity) => 'example' === $entity->property));
 
         $collection = new EntityCollection(
             new Entity('example'),
@@ -89,7 +89,7 @@ class CollectionTest extends TestCase
             new Entity('example'),
         );
 
-        $this->assertTrue($collection->forAll(fn (Entity $entity) => 'example' === $entity->property));
+        $this->assertTrue($collection->every(fn (Entity $entity) => 'example' === $entity->property));
     }
 
     public function testReverse(): void
