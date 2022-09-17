@@ -73,7 +73,7 @@ class CollectionTest extends TestCase
         $this->assertSame([0, 1, 2], array_keys($names));
     }
 
-    public function testForAll(): void
+    public function testEvery(): void
     {
         $collection = new EntityCollection(
             new Entity('example1'),
