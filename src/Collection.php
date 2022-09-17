@@ -18,6 +18,7 @@ class Collection implements CollectionInterface
      * @var array<int, TValue>
      */
     private readonly array $elements;
+    private readonly int $count;
 
     /**
      * @param TValue ...$elements
@@ -25,6 +26,7 @@ class Collection implements CollectionInterface
     public function __construct(mixed ...$elements)
     {
         $this->elements = array_values($elements);
+        $this->count = \count($elements);
     }
 
     /**
@@ -33,8 +35,8 @@ class Collection implements CollectionInterface
     public function toArray(): array
     {
         $array = [];
-        foreach ($this as $key => $element) {
-            $array[$key] = $element instanceof CollectionInterface ? $element->toArray() : $element;
+        foreach ($this as $element) {
+            $array[] = $element instanceof CollectionInterface ? $element->toArray() : $element;
         }
 
         return $array;
@@ -45,7 +47,9 @@ class Collection implements CollectionInterface
      */
     public function first(): mixed
     {
-        return empty($elements = $this->elements) ? null : reset($elements);
+        $elements = $this->elements;
+
+        return reset($elements) ?: null;
     }
 
     /**
@@ -53,12 +57,14 @@ class Collection implements CollectionInterface
      */
     public function last(): mixed
     {
-        return empty($elements = $this->elements) ? null : end($elements);
+        $elements = $this->elements;
+
+        return end($elements) ?: null;
     }
 
     public function isEmpty(): bool
     {
-        return empty($this->elements);
+        return 0 === $this->count;
     }
 
     /**
@@ -196,7 +202,7 @@ class Collection implements CollectionInterface
 
     public function count(): int
     {
-        return \count($this->elements);
+        return $this->count;
     }
 
     /**
